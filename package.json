@@ -14,9 +14,10 @@
   },
   "private": true,
   "scripts": {
+    "api": "place-my-order-api --port 7070",
     "test": "testee test.html --browsers firefox --reporter Spec",
-    "start": "done-serve --port 8080",
-    "develop": "done-serve --develop --port 8080",
+    "start": "done-serve --proxy http://localhost:7070 --port 8080",
+    "develop": "done-serve --develop --proxy http://localhost:7070 --port 8080",
     "build": "node build"
   },
   "main": "place-my-order/index.stache!done-autorender",
@@ -64,6 +65,8 @@
     "done-css": "^3.0.1",
     "done-serve": "^1.5.0",
     "generator-donejs": "^1.0.7",
+    "place-my-order-api": "^0.4.4",
+    "place-my-order-assets": "^0.1.7",
     "steal": "^1.5.15",
     "steal-less": "^1.2.0",
     "steal-stache": "^3.1.2"
